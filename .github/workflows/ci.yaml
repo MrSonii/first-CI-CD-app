@@ -1,4 +1,4 @@
-name: CI - Nextjs Build
+name: CI - Nextjs Build and Lint
 on:
   push: 
     branches: [release/prod, main]
@@ -20,5 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Lint check
+        run: npm run lint
+        
       - name: Build Next.js app
         run: npm run build
