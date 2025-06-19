@@ -25,3 +25,10 @@ jobs:
         
       - name: Build Next.js app
         run: npm run build
+        env:
+          ENV_KEY: ${{ secrets.ENV_KEY }}
+
+      - name: Show test secret (just for demo)
+        run: echo "Secret says $NEXT_PUBLIC_TEST_VAR"
+        env:
+          NEXT_PUBLIC_TEST_VAR: ${{ secrets.NEXT_PUBLIC_TEST_VAR }}
